@@ -1,9 +1,125 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script></head>
+  <meta charset="UTF-8">
+  <title>Stacked Area Chart</title>
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <!--<script type = "text/javascript" src = "filename.js" ></script> -->
+</head>
 <body>
-<div id="chartContainer" style="height: 370px; width: 100%;">
-</div>
+    <!-- Plotly chart will be drawn inside this DIV -->
+  <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+  <script>
+    /* JAVASCRIPT CODE GOES HERE */
+    window.onload = function() {
+      var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        title: {
+          text: "Products Sold by XYZ Ltd. in 2016"
+        },
+        axisX: {
+          title: "Seasons",
+          minimum: -0.02,
+          maximum: 3.02
+        },
+        axisY: {
+          title: "Sales"
+        },
+        toolTip: {
+          shared: true
+        },
+        data: [{
+            type: "stackedArea100",
+            name: "Mosquito Repellents",
+            showInLegend: "true",
+            dataPoints: [{
+                y: 83450,
+                label: "Spring"
+              },
+              {
+                y: 51240,
+                label: "Summer"
+              },
+              {
+                y: 64120,
+                label: "Autumn"
+              },
+              {
+                y: 71450,
+                label: "Fall"
+              }
+            ]
+          },
+          {
+            type: "stackedArea100",
+            name: "Liquid Soap",
+            showInLegend: "true",
+            dataPoints: [{
+                y: 20140,
+                label: "Spring"
+              },
+              {
+                y: 30170,
+                label: "Summer"
+              },
+              {
+                y: 24410,
+                label: "Autumn"
+              },
+              {
+                y: 38120,
+                label: "Fall"
+              }
+            ]
+          },
+          {
+            type: "stackedArea100",
+            name: "Napkins",
+            showInLegend: "true",
+            dataPoints: [{
+                y: 45120,
+                label: "Spring"
+              },
+              {
+                y: 50350,
+                label: "Summer"
+              },
+              {
+                y: 48410,
+                label: "Autumn"
+              },
+              {
+                y: 53120,
+                label: "Fall"
+              }
+            ]
+          },
+          {
+            type: "stackedArea100",
+            name: "Sanitizer",
+            showInLegend: "true",
+            dataPoints: [{
+                y: 11050,
+                label: "Spring"
+              },
+              {
+                y: 16100,
+                label: "Summer"
+              },
+              {
+                y: 15010,
+                label: "Autumn"
+              },
+              {
+                y: 23100,
+                label: "Fall"
+              }
+            ]
+          }
+        ]
+      });
+      chart.render();
+    }
+  </script>
 </body>
 </html>
